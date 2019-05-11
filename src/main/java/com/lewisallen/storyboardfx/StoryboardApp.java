@@ -6,7 +6,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
-public class StoryBoardApp extends Application
+public class StoryboardApp extends Application
 {
     public static void main(String[] args)
     {
@@ -19,7 +19,7 @@ public class StoryBoardApp extends Application
         FXMLLoader loader = new FXMLLoader(getClass().getClassLoader().getResource("Storyboard.fxml"));
         Parent root = loader.load();
 
-        Scene scene = new Scene(root, 830, 400);
+        Scene scene = new Scene(root, 1000, 500);
 
         primaryStage.setTitle("StoryboardFX");
         primaryStage.setScene(scene);

@@ -24,7 +24,7 @@
                 <configuration>
                     <archive>
                         <manifest>
-                            <mainClass>com.lewisallen.storyboardfx.StoryBoardApp</mainClass>
+                            <mainClass>com.lewisallen.storyboardfx.StoryboardApp</mainClass>
                         </manifest>
                     </archive>
                 </configuration>
