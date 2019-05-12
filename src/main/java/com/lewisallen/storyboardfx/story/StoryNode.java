@@ -2,15 +2,18 @@ package com.lewisallen.storyboardfx.story;
 
 import javafx.beans.property.SimpleStringProperty;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class StoryNode
 {
     private SimpleStringProperty value;
 
     private StoryNode parent,
-                 topChild,
-                 rightChild,
-                 bottomChild,
-                 leftChild;
+            topChild,
+            rightChild,
+            bottomChild,
+            leftChild;
 
     public StoryNode(String value)
     {
@@ -30,7 +33,7 @@ public class StoryNode
     public void setTopChild(StoryNode topChild)
     {
         this.topChild = topChild;
-        if(topChild != null)
+        if (topChild != null)
         {
             topChild.parent = this;
         }
@@ -44,7 +47,7 @@ public class StoryNode
     public void setRightChild(StoryNode rightChild)
     {
         this.rightChild = rightChild;
-        if(rightChild != null)
+        if (rightChild != null)
         {
             rightChild.parent = this;
         }
@@ -58,7 +61,7 @@ public class StoryNode
     public void setBottomChild(StoryNode bottomChild)
     {
         this.bottomChild = bottomChild;
-        if(bottomChild != null)
+        if (bottomChild != null)
         {
             bottomChild.parent = this;
         }
@@ -72,7 +75,7 @@ public class StoryNode
     public void setLeftChild(StoryNode leftChild)
     {
         this.leftChild = leftChild;
-        if(leftChild != null)
+        if (leftChild != null)
         {
             leftChild.parent = this;
         }
@@ -85,23 +88,25 @@ public class StoryNode
 
     /**
      * Gets the full current story based off this node and any parents.
+     *
      * @return Full story
      */
-    public String getCurrentStory()
+    public List<String> getCurrentStory()
     {
-        String story = concatenateStory("");
+        List<String> storyList = new ArrayList<>();
+        storyList = concatenateStory(storyList);
 
-        return story;
+        return storyList;
     }
 
-    public String concatenateStory(String story)
+    public List<String> concatenateStory(List<String> story)
     {
-        if(this.parent != null)
+        if (this.parent != null)
         {
             story = parent.concatenateStory(story);
         }
 
-        story += "- " + value.get() + "\n";
+        story.add(value.get());
         return story;
     }
 }

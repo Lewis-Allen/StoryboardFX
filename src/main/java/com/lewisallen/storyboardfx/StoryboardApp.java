@@ -20,6 +20,7 @@ public class StoryboardApp extends Application
         Parent root = loader.load();
 
         Scene scene = new Scene(root, 1000, 500);
+        scene.getStylesheets().add("Storyboard.css");
 
         primaryStage.setTitle("StoryboardFX");
         primaryStage.setScene(scene);

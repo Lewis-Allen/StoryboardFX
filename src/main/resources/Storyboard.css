@@ -1,0 +1,15 @@
+.text-input:readonly {
+    -fx-background-color: lightgrey;
+}
+
+.text-area:readonly .content{
+  -fx-background-color: lightgrey;
+}
+
+.text {
+    -fx-font-size: 14px;
+}
+
+.text-area {
+    -fx-font-size:16px;
+}

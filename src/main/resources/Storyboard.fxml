@@ -1,23 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
-
-<GridPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="com.lewisallen.storyboardfx.StoryboardController"
-            prefHeight="400.0" prefWidth="600.0"
-            hgap="10"
-            vgap="10"
-            >
+<GridPane xmlns:fx="http://javafx.com/fxml"
+          xmlns="http://javafx.com/javafx"
+          fx:id="container"
+          fx:controller="com.lewisallen.storyboardfx.StoryboardController"
+          prefHeight="400.0" prefWidth="600.0"
+          hgap="10"
+          vgap="10"
+>
 
 
     <VBox GridPane.columnIndex="3" GridPane.rowIndex="0" GridPane.rowSpan="3">
         <Label text="The Story so far..."/>
-        <TextArea fx:id="currentStory" VBox.vgrow="ALWAYS" wrapText="true"/>
+        <TextArea fx:id="currentStory" VBox.vgrow="ALWAYS" wrapText="true" editable="false"/>
+        <HBox>
+            <Button fx:id="printBreaks" text="Print Breaks"/>
+            <Button fx:id="printSpaces" text="Print Spaces"/>
+        </HBox>
     </VBox>
 
 
@@ -33,7 +34,8 @@
         <TextArea fx:id="top" wrapText="true"/>
         <HBox>
             <Button fx:id="topSubmit" text="Submit"/>
-            <Button fx:id="topGo" text="Choose" disable="true" />
+            <Button fx:id="topEdit" text="Edit" disable="true"/>
+            <Button fx:id="topGo" text="Choose" disable="true"/>
         </HBox>
     </VBox>
     <TextArea GridPane.columnIndex="2" GridPane.rowIndex="0" visible="false"/>
@@ -43,11 +45,12 @@
         <TextArea fx:id="left" wrapText="true"/>
         <HBox>
             <Button fx:id="leftSubmit" text="Submit" alignment="CENTER"/>
-            <Button fx:id="leftGo" text="Choose" disable="true" />
+            <Button fx:id="leftEdit" text="Edit" disable="true"/>
+            <Button fx:id="leftGo" text="Choose" disable="true"/>
         </HBox>
     </VBox>
     <VBox GridPane.columnIndex="1" GridPane.rowIndex="1">
-        <TextArea fx:id="currentLine"  wrapText="true" editable="false"/>
+        <TextArea fx:id="currentLine" wrapText="true" editable="false"/>
         <Button visible="false"/>
     </VBox>
 
@@ -55,7 +58,8 @@
         <TextArea fx:id="right" wrapText="true"/>
         <HBox>
             <Button fx:id="rightSubmit" text="Submit" alignment="CENTER"/>
-            <Button fx:id="rightGo" text="Choose" disable="true" />
+            <Button fx:id="rightEdit" text="Edit" disable="true"/>
+            <Button fx:id="rightGo" text="Choose" disable="true"/>
         </HBox>
     </VBox>
 
@@ -65,7 +69,8 @@
         <TextArea fx:id="bottom" wrapText="true"/>
         <HBox>
             <Button fx:id="bottomSubmit" text="Submit" alignment="CENTER"/>
-            <Button fx:id="bottomGo" text="Choose" disable="true" />
+            <Button fx:id="bottomEdit" text="Edit" disable="true"/>
+            <Button fx:id="bottomGo" text="Choose" disable="true"/>
         </HBox>
     </VBox>
     <TextArea GridPane.columnIndex="2" GridPane.rowIndex="0" visible="false"/>
