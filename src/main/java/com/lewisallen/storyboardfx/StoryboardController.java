@@ -223,7 +223,7 @@ public class StoryboardController
         printBreaks.setOnAction((event) -> {
             try
             {
-                File selectedDirectory = showSelectedDirectoryDialog();
+                File selectedDirectory = showSelectedFileDialog();
 
                 if(selectedDirectory != null)
                 {
@@ -243,7 +243,7 @@ public class StoryboardController
         printSpaces.setOnAction((event) -> {
             try
             {
-                File selectedDirectory = showSelectedDirectoryDialog();
+                File selectedDirectory = showSelectedFileDialog();
 
                 if(selectedDirectory != null)
                 {
@@ -360,7 +360,7 @@ public class StoryboardController
         currentLine.setText(line);
     }
 
-    private File showSelectedDirectoryDialog()
+    private File showSelectedFileDialog()
     {
         FileChooser fc = new FileChooser();
 
@@ -373,11 +373,7 @@ public class StoryboardController
     private void writeStoryToFile(String directoryPath, List<String> sentenceList, CharSequence delimiter) throws IOException
     {
         String story = String.join(delimiter, sentenceList);
-
         Path newFilePath = Paths.get(directoryPath);
-
-        System.out.println(newFilePath.toAbsolutePath().toString());
-
         Files.write(newFilePath, story.getBytes());
 
         System.out.println(String.format("Wrote file to %s", newFilePath.toString()));
