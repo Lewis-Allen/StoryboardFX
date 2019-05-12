@@ -148,7 +148,7 @@ public class StoryboardController
         });
 
         rightEdit.setOnAction((e) -> {
-            tree.getCurrent().setTopChild(null);
+            tree.getCurrent().setRightChild(null);
             rightSubmit.setDisable(false);
             rightEdit.setDisable(true);
             rightGo.setDisable(true);
@@ -156,7 +156,7 @@ public class StoryboardController
         });
 
         bottomEdit.setOnAction((e) -> {
-            tree.getCurrent().setTopChild(null);
+            tree.getCurrent().setBottomChild(null);
             bottomSubmit.setDisable(false);
             bottomEdit.setDisable(true);
             bottomGo.setDisable(true);
@@ -164,7 +164,7 @@ public class StoryboardController
         });
 
         leftEdit.setOnAction((e) -> {
-            tree.getCurrent().setTopChild(null);
+            tree.getCurrent().setLeftChild(null);
             leftSubmit.setDisable(false);
             leftEdit.setDisable(true);
             leftGo.setDisable(true);
